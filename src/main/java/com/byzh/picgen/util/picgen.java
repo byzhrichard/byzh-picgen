@@ -8,7 +8,13 @@ import java.io.IOException;
 public class picgen {
     public static void main(String[] args) throws IOException {
         String path = "src/main/resources/assets/byzh-picgen/textures/block/";
-        mytry("byzh_red",0xFF0000,path);
+        mytry("byzh_red",0xEB3324,path);
+        mytry("byzh_orange",0xF08650,path);
+        mytry("byzh_yellow",0xFFFD55,path);
+        mytry("byzh_green",0x75F94D,path);
+        mytry("byzh_cyan",0x00FFFF,path);
+        mytry("byzh_blue",0x3282F6,path);
+        mytry("byzh_purple",0xEA3FF7,path);
     }
     private static void mytry(String name,int pic,String path) throws IOException {
 

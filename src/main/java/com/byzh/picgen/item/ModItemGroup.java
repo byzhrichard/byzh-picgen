@@ -3,6 +3,7 @@ package com.byzh.picgen.item;
 import com.byzh.picgen.ByzhPicgen;
 import com.byzh.picgen.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -17,7 +18,10 @@ public class ModItemGroup {
             .displayName(Text.translatable("itemGroup.picgen_group"))
             .icon(()->new ItemStack(ModBlocks.BYZH_RED))
             .entries( (displayContext, entries) -> {
-                entries.add(ModBlocks.BYZH_RED);
+//                entries.add(ModBlocks.BYZH_RED);
+                for (Block block : ModBlocks.BLOCK_LIST) {
+                    entries.add(block);
+                }
 
             }).build();
     public static final ItemGroup PICGEN_GROUP = registerItemGroups("picgen_group", PICGEN_GROUP_Bulider);
