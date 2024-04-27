@@ -2,7 +2,9 @@ package com.byzh.picgen.block;
 
 import com.byzh.picgen.ByzhPicgen;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -13,6 +15,10 @@ public class ModBlocks extends Block {
     public ModBlocks(Settings settings) {
         super(settings);
     }
+
+    public static final Block BYZH_RED = registerBlocks(
+            "byzh_red",
+            new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
 
     //==注册方法=====================================================================
     private static Item registerBlockItems(String name, Block block){

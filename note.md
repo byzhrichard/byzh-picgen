@@ -178,6 +178,16 @@ src/main/resources/data/try-mod/tags/blocks/prospector_list.json
 
 # DataGen
 src/main/java/com/byzh/TryModDataGenerator.java
+![img.png](pic/23242123.png)
+
+extends FabricModelProvider
+![img.png](pic/32423523.png)
+
+extends FabricBlockLootTableProvider
+![img.png](pic/42352352.png)
+
+extends FabricTagProvider.BlockTagProvider
+![img.png](pic/4123213.png)
 
 # 更多Block
 楼梯：
