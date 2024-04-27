@@ -1,14 +1,11 @@
-package com.byzh.picgen.test;
+package com.byzh.picgen.util;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Random;
 
 public class picgen {
-
-
     public static void main(String[] args) throws IOException {
         String path = "src/main/resources/assets/byzh-picgen/textures/block/";
         mytry("byzh_red",0xFF0000,path);
