@@ -13,9 +13,9 @@ public class OutputTool extends Item {
         super(settings);
     }
 
-    BlockPos blockPos1 = new BlockPos(0,0,0);
-    BlockPos blockPos2 = new BlockPos(0,0,0);
-    boolean selectBP1 = true;
+    private static BlockPos blockPos1 = new BlockPos(0,0,0);
+    private static BlockPos blockPos2 = new BlockPos(0,0,0);
+    private static boolean selectBP1 = true;
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
