@@ -2,6 +2,7 @@ package com.byzh.picgen;
 
 import com.byzh.picgen.block.ModBlocks;
 import com.byzh.picgen.item.ModItemGroup;
+import com.byzh.picgen.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -16,8 +17,8 @@ public class ByzhPicgen implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Hello Fabric world!");
-
 		ModBlocks.registerModBlocks();
+		ModItems.registerModItems();
 		ModItemGroup.registerModItemGroup();
 	}
 }

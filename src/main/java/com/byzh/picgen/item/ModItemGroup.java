@@ -18,7 +18,7 @@ public class ModItemGroup {
             .displayName(Text.translatable("itemGroup.picgen_group"))
             .icon(()->new ItemStack(ModBlocks.BYZH_RED))
             .entries( (displayContext, entries) -> {
-//                entries.add(ModBlocks.BYZH_RED);
+                entries.add(ModItems.OUTPUT_TOOL);
                 for (Block block : ModBlocks.BLOCK_LIST) {
                     entries.add(block);
                 }

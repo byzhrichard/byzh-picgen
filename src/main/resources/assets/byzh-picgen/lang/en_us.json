@@ -1,4 +1,5 @@
 {
   "block.byzh-picgen.byzh_red": "Byzh Red",
-  "itemGroup.picgen_group": "Picgen Group"
+  "item.byzh-picgen.output_tool": "Output Tool",
+  "itemGroup.picgen_group": "Picgen Group",
 }
