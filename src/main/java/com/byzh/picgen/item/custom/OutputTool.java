@@ -32,6 +32,7 @@ public class OutputTool extends Item {
     private static ArrayList<Integer> SIZE = new ArrayList<>();
     private static int WIDTH = 0;
     private static int HEIGHT = 0;
+    private static String PATH = FabricLoader.getInstance().getGameDir().toString()+"\\config\\byzh";
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient()){
@@ -60,34 +61,30 @@ public class OutputTool extends Item {
         int y = SIZE.get(3) - SIZE.get(2) + 1;
         int z = SIZE.get(5) - SIZE.get(4) + 1;
 
-        FabricLoader loader = FabricLoader.getInstance();
-        java.nio.file.Path mcDir = loader.getGameDir();
-        String path = mcDir.toString()+"\\config\\byzh";
-        File dir = new File(path);
+        File dir = new File(PATH);
         dir.mkdir();
         int dircnt = dir.list().length;
+
         if (z == 1){
             WIDTH = x;
             HEIGHT = y;
+            xyoutput(world, PATH, dircnt, x ,y);
+
         }
         if (y == 1){
             WIDTH = x;
             HEIGHT = z;
+            xzoutput(world, PATH, dircnt, x ,z);
+
         }
         if (x == 1){
             WIDTH = z;
             HEIGHT = y;
-        }
-        if (z == 1){
-            xyoutput(world, path, dircnt, x ,y);
-        }
-        if (y == 1){
-            xzoutput(world, path, dircnt, x ,z);
-        }
-        if (x == 1){
-            yzoutput(world, path, dircnt, y, z);
+            yzoutput(world, PATH, dircnt, y, z);
+
         }
     }
+
     private static void yzoutput(World world, String path, int dircnt, int y, int z) throws IOException {
         BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
         for (int k = 0; k < z; k++) {
