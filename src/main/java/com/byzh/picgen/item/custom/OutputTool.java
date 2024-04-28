@@ -75,8 +75,8 @@ public class OutputTool extends Item {
             height = z;
         }
         if (x == 1){
-            width = y;
-            height = z;
+            width = z;
+            height = y;
         }
         if (z == 1){
             BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -92,10 +92,34 @@ public class OutputTool extends Item {
             File output = new File(path+"\\output"+ dir.list().length +".png");
             ImageIO.write(image, "png", output); // 保存为PNG格式的图片
         }
-//        File output = new File(path+"\\output"+ FileCnt +".png");
-//        ImageIO.write(image, "png", output); // 保存为PNG格式的图片
-
-
+        if (y == 1){
+            BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+            for (int i = 0; i < x; i++) {
+                for (int k = 0; k < z; k++) {
+                    Block block = world.getBlockState(new BlockPos(i + SIZE.get(0), SIZE.get(2), k+SIZE.get(4))).getBlock();
+                    String block_name = block.toString();
+                    block_name = block_name.substring(18,block_name.length()-1);
+                    int colorID = getColorID(block_name);
+                    image.setRGB(i, k, colorID); // 设置像素颜色
+                }
+            }
+            File output = new File(path+"\\output"+ dir.list().length +".png");
+            ImageIO.write(image, "png", output); // 保存为PNG格式的图片
+        }
+        if (x == 1){
+            BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+            for (int k = 0; k < z; k++) {
+                for (int j = 0; j < y; j++) {
+                    Block block = world.getBlockState(new BlockPos(SIZE.get(0), j+SIZE.get(2), k+SIZE.get(4))).getBlock();
+                    String block_name = block.toString();
+                    block_name = block_name.substring(18,block_name.length()-1);
+                    int colorID = getColorID(block_name);
+                    image.setRGB(k, j, colorID); // 设置像素颜色
+                }
+            }
+            File output = new File(path+"\\output"+ dir.list().length +".png");
+            ImageIO.write(image, "png", output); // 保存为PNG格式的图片
+        }
     }
 
     private static int getColorID(String name) {
