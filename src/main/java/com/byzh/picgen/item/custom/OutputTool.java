@@ -1,12 +1,8 @@
 package com.byzh.picgen.item.custom;
 
-import com.byzh.picgen.block.ModBlocks;
 import com.byzh.picgen.util.mycolor;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.passive.TropicalFishEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -36,7 +32,7 @@ public class OutputTool extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient()){
-            if (isSelected()){
+            if (isRightSelected()){
                 SIZE.clear();
                 getSize();
                 try {
@@ -44,7 +40,7 @@ public class OutputTool extends Item {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                user.sendMessage(Text.literal(SIZE.toString()),false);
+                user.sendMessage(Text.literal("Complete!"),false);
             }else {
                 user.sendMessage(Text.literal("select wrong"),false);
             }
@@ -65,19 +61,16 @@ public class OutputTool extends Item {
             WIDTH = x;
             HEIGHT = y;
             xyoutput(world, PATH, dircnt, x ,y);
-
         }
         if (y == 1){
             WIDTH = x;
             HEIGHT = z;
             xzoutput(world, PATH, dircnt, x ,z);
-
         }
         if (x == 1){
             WIDTH = z;
             HEIGHT = y;
             yzoutput(world, PATH, dircnt, y, z);
-
         }
     }
 
@@ -128,7 +121,7 @@ public class OutputTool extends Item {
         return NAME_COLOR.get(name);
     }
 
-    private static boolean isSelected(){
+    private static boolean isRightSelected(){
         boolean flag1 = SelectTool.blockPos1 != SelectTool.blockPos0 &
                 SelectTool.blockPos2 != SelectTool.blockPos0;
         boolean flag2 = SelectTool.blockPos1.getX() == SelectTool.blockPos2.getX() |

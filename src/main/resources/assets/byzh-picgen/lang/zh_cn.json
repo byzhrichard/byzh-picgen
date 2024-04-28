@@ -1,5 +1,11 @@
 {
   "block.byzh-picgen.byzh_red": "红",
+  "block.byzh-picgen.byzh_orange": "橙",
+  "block.byzh-picgen.byzh_yellow": "黄",
+  "block.byzh-picgen.byzh_green": "绿",
+  "block.byzh-picgen.byzh_cyan": "青",
+  "block.byzh-picgen.byzh_blue": "蓝",
+  "block.byzh-picgen.byzh_purple": "紫",
   "item.byzh-picgen.output_tool": "导出工具",
   "item.byzh-picgen.select_tool": "选择工具",
   "itemGroup.picgen_group": "麦块作画"

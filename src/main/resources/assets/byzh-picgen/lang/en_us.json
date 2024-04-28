@@ -1,5 +1,11 @@
 {
   "block.byzh-picgen.byzh_red": "Byzh Red",
+  "block.byzh-picgen.byzh_orange": "Byzh Orange",
+  "block.byzh-picgen.byzh_yellow": "Byzh Yellow",
+  "block.byzh-picgen.byzh_green": "Byzh Green",
+  "block.byzh-picgen.byzh_cyan": "Byzh Cyan",
+  "block.byzh-picgen.byzh_blue": "Byzh Blue",
+  "block.byzh-picgen.byzh_purple": "Byzh Purple",
   "item.byzh-picgen.output_tool": "Output Tool",
   "item.byzh-picgen.select_tool": "Select Tool",
   "itemGroup.picgen_group": "Picgen Group",

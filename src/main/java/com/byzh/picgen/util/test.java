@@ -2,15 +2,14 @@ package com.byzh.picgen.util;
 
 import com.byzh.picgen.block.ModBlocks;
 
+import java.util.Arrays;
+
 public class test {
     public static void main(String[] args) {
-        ModBlocks.registerModBlocks();
+        int[] a = {1,2};
 
-        System.out.println("awa");
-        System.out.println(true & false);
-        System.out.println(false & true);
-        String a = ModBlocks.BYZH_CYAN.toString();
-        System.out.println(a);
+        System.out.println(Arrays.toString(a));
+
 
     }
 }
