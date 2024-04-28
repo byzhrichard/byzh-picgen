@@ -3,6 +3,7 @@ package com.byzh.picgen.item.custom;
 import com.byzh.picgen.util.mycolor;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -11,6 +12,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -18,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class OutputTool extends Item {
     public OutputTool(Settings settings) {
@@ -43,6 +46,13 @@ public class OutputTool extends Item {
             }
         }
         return TypedActionResult.success(user.getStackInHand(hand));
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.translatable("item.byzh-picgen.outputtoolusage1"));
+        tooltip.add(Text.translatable("item.byzh-picgen.outputtoolusage2"));
+        super.appendTooltip(stack, world, tooltip, context);
     }
 
     public static void output(World world) throws IOException {

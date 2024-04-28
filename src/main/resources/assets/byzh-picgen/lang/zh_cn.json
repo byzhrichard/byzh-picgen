@@ -3,6 +3,12 @@
   "item.byzh-picgen.select2": "你选择的第二个方块在(%d, %d, %d)。",
   "item.byzh-picgen.complete": "完成啦awa~",
   "item.byzh-picgen.selectwrong": "选取方式有误qwq",
+  "item.byzh-picgen.outputtoolusage1": "选好区域后，右键保存",
+  "item.byzh-picgen.outputtoolusage2": "位于config/byzh",
+  "item.byzh-pic.selecttoolusage1": "右键选左上角",
+  "item.byzh-pic.selecttoolusage2": "右键选右下角",
+  "item.byzh-pic.selecttoolusage3": "确保两个方块在同一平面",
+  "item.byzh-pic.selecttoolusage4": "尚不支持水平面操作qwq",
 
   "block.byzh-picgen.byzh_red": "红",
   "block.byzh-picgen.byzh_orange": "橙",

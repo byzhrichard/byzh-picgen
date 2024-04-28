@@ -1,5 +1,6 @@
 package com.byzh.picgen.item.custom;
 
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.StackReference;
 import net.minecraft.item.Item;
@@ -13,6 +14,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class SelectTool extends Item {
     public SelectTool(Settings settings) {
@@ -43,6 +47,12 @@ public class SelectTool extends Item {
         return ActionResult.SUCCESS;
     }
 
-
-
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.translatable("item.byzh-pic.selecttoolusage1"));
+        tooltip.add(Text.translatable("item.byzh-pic.selecttoolusage2"));
+        tooltip.add(Text.translatable("item.byzh-pic.selecttoolusage3"));
+        tooltip.add(Text.translatable("item.byzh-pic.selecttoolusage4"));
+        super.appendTooltip(stack, world, tooltip, context);
+    }
 }

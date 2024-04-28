@@ -16,7 +16,7 @@ import net.minecraft.util.Identifier;
 public class ModItemGroup {
     public static final ItemGroup PICGEN_GROUP_Bulider = FabricItemGroup.builder()
             .displayName(Text.translatable("itemGroup.picgen_group"))
-            .icon(()->new ItemStack(ModBlocks.BYZH_RED))
+            .icon(()->new ItemStack(ModItems.ICON))
             .entries( (displayContext, entries) -> {
                 entries.add(ModItems.OUTPUT_TOOL);
                 entries.add(ModItems.SELECT_TOOL);
