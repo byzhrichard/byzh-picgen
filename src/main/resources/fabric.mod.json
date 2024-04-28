@@ -3,7 +3,7 @@
 	"id": "byzh-picgen",
 	"version": "${version}",
 	"name": "Byzh's Picgen",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This is a mod to draw and save as a png",
 	"authors": [
 		"byzh"
 	],
@@ -11,12 +11,15 @@
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/byzh-picgen/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"com.byzh.picgen.ByzhPicgen"
+		],
+		"client": [
+			"com.byzh.picgen.ByzhPicgenClient"
 		],
 		"fabric-datagen": [
 			"com.byzh.picgen.ByzhPicgenDataGenerator"
