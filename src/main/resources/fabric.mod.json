@@ -2,10 +2,10 @@
 	"schemaVersion": 1,
 	"id": "byzh-picgen",
 	"version": "${version}",
-	"name": "Byzh Picgen",
+	"name": "Byzh's Picgen",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Me!"
+		"byzh"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
