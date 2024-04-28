@@ -1,4 +1,8 @@
 {
+  "item.byzh-picgen.select1": "你选择的第一个方块在(%d, %d, %d)。",
+  "item.byzh-picgen.select2": "你选择的第二个方块在(%d, %d, %d)。",
+  "item.byzh-picgen.complete": "完成啦~",
+  "item.byzh-picgen.selectwrong": "选取方式有误qwq",
   "block.byzh-picgen.byzh_red": "红",
   "block.byzh-picgen.byzh_orange": "橙",
   "block.byzh-picgen.byzh_yellow": "黄",

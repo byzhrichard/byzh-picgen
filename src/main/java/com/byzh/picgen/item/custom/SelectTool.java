@@ -33,15 +33,12 @@ public class SelectTool extends Item {
             if (selectBP1){
                 blockPos1 = blockPos;
                 selectBP1 = false;
-                player.sendMessage(Text.literal("你选中的第一个方块在("+blockPos1.getX()+", "+blockPos1.getY()+", "+blockPos1.getZ()+")"),false);
+                player.sendMessage(Text.translatable("item.byzh-picgen.select1",blockPos1.getX(),blockPos1.getY(),blockPos1.getZ()),false);
             } else {
                 blockPos2 = blockPos;
                 selectBP1 = true;
-                player.sendMessage(Text.literal("你选中的第二个方块在("+blockPos2.getX()+", "+blockPos2.getY()+", "+blockPos2.getZ()+")"),false);
-
+                player.sendMessage(Text.translatable("item.byzh-picgen.select2",blockPos2.getX(),blockPos2.getY(),blockPos2.getZ()),false);
             }
-
-
         }
         return ActionResult.SUCCESS;
     }

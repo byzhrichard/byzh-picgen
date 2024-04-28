@@ -33,19 +33,19 @@ public class OutputTool extends Item {
             if (isRightSelected()){
                 sizeInit();
                 try {
-                    output(world, user);
+                    output(world);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                user.sendMessage(Text.literal("Complete!"),false);
+                user.sendMessage(Text.translatable("item.byzh-picgen.complete"),false);
             }else {
-                user.sendMessage(Text.literal("select wrong"),false);
+                user.sendMessage(Text.translatable("item.byzh-picgen.selectwrong"),false);
             }
         }
         return TypedActionResult.success(user.getStackInHand(hand));
     }
 
-    public static void output(World world, PlayerEntity player) throws IOException {
+    public static void output(World world) throws IOException {
         ArrayList<Integer> x = new ArrayList<>();
         if (SIZE.get(1) < SIZE.get(2)){
             for (int i = 0; i < SIZE.get(2) - SIZE.get(1) + 1; i++) {
@@ -91,6 +91,7 @@ public class OutputTool extends Item {
         if (x.size() == 1){
             image = yzGetImage(world, x, y, z);
         }
+
         imageSave(image,dircnt);
     }
 
@@ -107,8 +108,7 @@ public class OutputTool extends Item {
                 int width = 0;
                 for (Integer k : z) {
                     int colorID = getColorID(world,i,j,k);
-                    image.setRGB(width, height, colorID); // 设置像素颜色
-
+                    image.setRGB(width, height, colorID);
                     width++;
                 }
                 height++;
@@ -124,8 +124,7 @@ public class OutputTool extends Item {
                 int height = 0;
                 for (Integer k : z) {
                     int colorID = getColorID(world,i,j,k);
-                    image.setRGB(width, height, colorID); // 设置像素颜色
-
+                    image.setRGB(width, height, colorID);
                     height++;
                 }
             }
@@ -141,7 +140,7 @@ public class OutputTool extends Item {
             for (Integer j : y) {
                 for (Integer k : z) {
                     int colorID = getColorID(world,i,j,k);
-                    image.setRGB(width, height, colorID); // 设置像素颜色
+                    image.setRGB(width, height, colorID);
                 }
                 height++;
             }

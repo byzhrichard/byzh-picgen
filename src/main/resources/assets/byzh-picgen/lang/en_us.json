@@ -1,4 +1,8 @@
 {
+  "item.byzh-picgen.select1": "The first block is in (%d, %d, %d).",
+  "item.byzh-picgen.select2": "The second block is in (%d, %d, %d).",
+  "item.byzh-picgen.complete": "Completed!",
+  "item.byzh-picgen.selectwrong": "Wrong Selection",
   "block.byzh-picgen.byzh_red": "Byzh Red",
   "block.byzh-picgen.byzh_orange": "Byzh Orange",
   "block.byzh-picgen.byzh_yellow": "Byzh Yellow",
