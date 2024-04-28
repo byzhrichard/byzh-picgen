@@ -30,6 +30,8 @@ public class OutputTool extends Item {
 
     private static HashMap<String,Integer> NAME_COLOR = mycolor.NAME_COLOR;
     private static ArrayList<Integer> SIZE = new ArrayList<>();
+    private static int WIDTH = 0;
+    private static int HEIGHT = 0;
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient()){
@@ -57,69 +59,76 @@ public class OutputTool extends Item {
         int x = SIZE.get(1) - SIZE.get(0) + 1;
         int y = SIZE.get(3) - SIZE.get(2) + 1;
         int z = SIZE.get(5) - SIZE.get(4) + 1;
-        int width = 0;
-        int height = 0;
 
         FabricLoader loader = FabricLoader.getInstance();
         java.nio.file.Path mcDir = loader.getGameDir();
         String path = mcDir.toString()+"\\config\\byzh";
         File dir = new File(path);
         dir.mkdir();
-
+        int dircnt = dir.list().length;
         if (z == 1){
-            width = x;
-            height = y;
+            WIDTH = x;
+            HEIGHT = y;
         }
         if (y == 1){
-            width = x;
-            height = z;
+            WIDTH = x;
+            HEIGHT = z;
         }
         if (x == 1){
-            width = z;
-            height = y;
+            WIDTH = z;
+            HEIGHT = y;
         }
         if (z == 1){
-            BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-            for (int i = 0; i < x; i++) {
-                for (int j = 0; j < y; j++) {
-                    Block block = world.getBlockState(new BlockPos(i + SIZE.get(0), j + SIZE.get(2), SIZE.get(4))).getBlock();
-                    String block_name = block.toString();
-                    block_name = block_name.substring(18,block_name.length()-1);
-                    int colorID = getColorID(block_name);
-                    image.setRGB(i, j, colorID); // 设置像素颜色
-                }
-            }
-            File output = new File(path+"\\output"+ dir.list().length +".png");
-            ImageIO.write(image, "png", output); // 保存为PNG格式的图片
+            xyoutput(world, path, dircnt, x ,y);
         }
         if (y == 1){
-            BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-            for (int i = 0; i < x; i++) {
-                for (int k = 0; k < z; k++) {
-                    Block block = world.getBlockState(new BlockPos(i + SIZE.get(0), SIZE.get(2), k+SIZE.get(4))).getBlock();
-                    String block_name = block.toString();
-                    block_name = block_name.substring(18,block_name.length()-1);
-                    int colorID = getColorID(block_name);
-                    image.setRGB(i, k, colorID); // 设置像素颜色
-                }
-            }
-            File output = new File(path+"\\output"+ dir.list().length +".png");
-            ImageIO.write(image, "png", output); // 保存为PNG格式的图片
+            xzoutput(world, path, dircnt, x ,z);
         }
         if (x == 1){
-            BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+            yzoutput(world, path, dircnt, y, z);
+        }
+    }
+    private static void yzoutput(World world, String path, int dircnt, int y, int z) throws IOException {
+        BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+        for (int k = 0; k < z; k++) {
+            for (int j = 0; j < y; j++) {
+                Block block = world.getBlockState(new BlockPos(SIZE.get(0), j+SIZE.get(2), k+SIZE.get(4))).getBlock();
+                String block_name = block.toString();
+                block_name = block_name.substring(18,block_name.length()-1);
+                int colorID = getColorID(block_name);
+                image.setRGB(k, j, colorID); // 设置像素颜色
+            }
+        }
+        File output = new File(path+"\\output"+ dircnt +".png");
+        ImageIO.write(image, "png", output); // 保存为PNG格式的图片
+    }
+    private static void xzoutput(World world, String path, int dircnt, int x, int z) throws IOException {
+        BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+        for (int i = 0; i < x; i++) {
             for (int k = 0; k < z; k++) {
-                for (int j = 0; j < y; j++) {
-                    Block block = world.getBlockState(new BlockPos(SIZE.get(0), j+SIZE.get(2), k+SIZE.get(4))).getBlock();
-                    String block_name = block.toString();
-                    block_name = block_name.substring(18,block_name.length()-1);
-                    int colorID = getColorID(block_name);
-                    image.setRGB(k, j, colorID); // 设置像素颜色
-                }
+                Block block = world.getBlockState(new BlockPos(i + SIZE.get(0), SIZE.get(2), k+SIZE.get(4))).getBlock();
+                String block_name = block.toString();
+                block_name = block_name.substring(18,block_name.length()-1);
+                int colorID = getColorID(block_name);
+                image.setRGB(i, k, colorID); // 设置像素颜色
             }
-            File output = new File(path+"\\output"+ dir.list().length +".png");
-            ImageIO.write(image, "png", output); // 保存为PNG格式的图片
         }
+        File output = new File(path+"\\output"+ dircnt +".png");
+        ImageIO.write(image, "png", output); // 保存为PNG格式的图片
+    }
+    private static void xyoutput(World world, String path, int dircnt, int x, int y) throws IOException {
+        BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y; j++) {
+                Block block = world.getBlockState(new BlockPos(i + SIZE.get(0), j + SIZE.get(2), SIZE.get(4))).getBlock();
+                String block_name = block.toString();
+                block_name = block_name.substring(18,block_name.length()-1);
+                int colorID = getColorID(block_name);
+                image.setRGB(i, j, colorID); // 设置像素颜色
+            }
+        }
+        File output = new File(path+"\\output"+ dircnt +".png");
+        ImageIO.write(image, "png", output); // 保存为PNG格式的图片
     }
 
     private static int getColorID(String name) {
