@@ -26,17 +26,14 @@ public class OutputTool extends Item {
 
     private static HashMap<String,Integer> NAME_COLOR = mycolor.NAME_COLOR;
     private static ArrayList<Integer> SIZE = new ArrayList<>();
-    private static int WIDTH = 0;
-    private static int HEIGHT = 0;
-    private static String PATH = FabricLoader.getInstance().getGameDir().toString()+"\\config\\byzh";
+    private static final String PATH = FabricLoader.getInstance().getGameDir().toString()+"\\config\\byzh";
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient()){
             if (isRightSelected()){
-                SIZE.clear();
-                getSize();
+                sizeInit();
                 try {
-                    output(world);
+                    output(world, user);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -48,77 +45,116 @@ public class OutputTool extends Item {
         return TypedActionResult.success(user.getStackInHand(hand));
     }
 
-    public static void output(World world) throws IOException {
-        int x = SIZE.get(1) - SIZE.get(0) + 1;
-        int y = SIZE.get(3) - SIZE.get(2) + 1;
-        int z = SIZE.get(5) - SIZE.get(4) + 1;
+    public static void output(World world, PlayerEntity player) throws IOException {
+        ArrayList<Integer> x = new ArrayList<>();
+        if (SIZE.get(1) < SIZE.get(2)){
+            for (int i = 0; i < SIZE.get(2) - SIZE.get(1) + 1; i++) {
+                x.add(SIZE.get(1)+i);
+            }
+        } else {
+            for (int i = 0; i < SIZE.get(1) - SIZE.get(2) + 1; i++) {
+                x.add(SIZE.get(1)-i);
+            }
+        }
+        ArrayList<Integer> y = new ArrayList<>();
+        if (SIZE.get(3) < SIZE.get(4)){
+            for (int i = 0; i < SIZE.get(4) - SIZE.get(3) + 1; i++) {
+                y.add(SIZE.get(3)+i);
+            }
+        } else {
+            for (int i = 0; i < SIZE.get(3) - SIZE.get(4) + 1; i++) {
+                y.add(SIZE.get(3)-i);
+            }
+        }
+        ArrayList<Integer> z = new ArrayList<>();
+        if (SIZE.get(5) < SIZE.get(6)){
+            for (int i = 0; i < SIZE.get(6) - SIZE.get(5) + 1; i++) {
+                z.add(SIZE.get(5)+i);
+            }
+        } else {
+            for (int i = 0; i < SIZE.get(5) - SIZE.get(6) + 1; i++) {
+                z.add(SIZE.get(5)-i);
+            }
+        }
 
         File dir = new File(PATH);
         dir.mkdir();
         int dircnt = dir.list().length;
 
-        if (z == 1){
-            WIDTH = x;
-            HEIGHT = y;
-            xyoutput(world, PATH, dircnt, x ,y);
+        BufferedImage image = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB);
+        if (z.size() == 1){
+            image = xyGetImage(world, x, y, z);
         }
-        if (y == 1){
-            WIDTH = x;
-            HEIGHT = z;
-            xzoutput(world, PATH, dircnt, x ,z);
+        if (y.size() == 1){
+            image = xzGetImage(world, x, y, z);
         }
-        if (x == 1){
-            WIDTH = z;
-            HEIGHT = y;
-            yzoutput(world, PATH, dircnt, y, z);
+        if (x.size() == 1){
+            image = yzGetImage(world, x, y, z);
         }
+        imageSave(image,dircnt);
     }
 
-    private static void yzoutput(World world, String path, int dircnt, int y, int z) throws IOException {
-        BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
-        for (int k = 0; k < z; k++) {
-            for (int j = 0; j < y; j++) {
-                Block block = world.getBlockState(new BlockPos(SIZE.get(0), j+SIZE.get(2), k+SIZE.get(4))).getBlock();
-                String block_name = block.toString();
-                block_name = block_name.substring(18,block_name.length()-1);
-                int colorID = getColorID(block_name);
-                image.setRGB(k, j, colorID); // 设置像素颜色
-            }
-        }
-        File output = new File(path+"\\output"+ dircnt +".png");
-        ImageIO.write(image, "png", output); // 保存为PNG格式的图片
-    }
-    private static void xzoutput(World world, String path, int dircnt, int x, int z) throws IOException {
-        BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
-        for (int i = 0; i < x; i++) {
-            for (int k = 0; k < z; k++) {
-                Block block = world.getBlockState(new BlockPos(i + SIZE.get(0), SIZE.get(2), k+SIZE.get(4))).getBlock();
-                String block_name = block.toString();
-                block_name = block_name.substring(18,block_name.length()-1);
-                int colorID = getColorID(block_name);
-                image.setRGB(i, k, colorID); // 设置像素颜色
-            }
-        }
-        File output = new File(path+"\\output"+ dircnt +".png");
-        ImageIO.write(image, "png", output); // 保存为PNG格式的图片
-    }
-    private static void xyoutput(World world, String path, int dircnt, int x, int y) throws IOException {
-        BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
-        for (int i = 0; i < x; i++) {
-            for (int j = 0; j < y; j++) {
-                Block block = world.getBlockState(new BlockPos(i + SIZE.get(0), j + SIZE.get(2), SIZE.get(4))).getBlock();
-                String block_name = block.toString();
-                block_name = block_name.substring(18,block_name.length()-1);
-                int colorID = getColorID(block_name);
-                image.setRGB(i, j, colorID); // 设置像素颜色
-            }
-        }
-        File output = new File(path+"\\output"+ dircnt +".png");
+    private static void imageSave(BufferedImage image,int dircnt) throws IOException {
+        File output = new File(PATH+"\\output"+ dircnt +".png");
         ImageIO.write(image, "png", output); // 保存为PNG格式的图片
     }
 
-    private static int getColorID(String name) {
-        return NAME_COLOR.get(name);
+    private static BufferedImage yzGetImage(World world, ArrayList<Integer> x, ArrayList<Integer> y, ArrayList<Integer> z){
+        BufferedImage image = new BufferedImage(z.size(), y.size(), BufferedImage.TYPE_INT_RGB);
+        for (Integer i : x) {
+            int height = 0;
+            for (Integer j : y) {
+                int width = 0;
+                for (Integer k : z) {
+                    int colorID = getColorID(world,i,j,k);
+                    image.setRGB(width, height, colorID); // 设置像素颜色
+
+                    width++;
+                }
+                height++;
+            }
+        }
+        return image;
+    }
+    private static BufferedImage xzGetImage(World world, ArrayList<Integer> x, ArrayList<Integer> y, ArrayList<Integer> z) {
+        BufferedImage image = new BufferedImage(x.size(), z.size(), BufferedImage.TYPE_INT_RGB);
+        int width = 0;
+        for (Integer i : x) {
+            for (Integer j : y) {
+                int height = 0;
+                for (Integer k : z) {
+                    int colorID = getColorID(world,i,j,k);
+                    image.setRGB(width, height, colorID); // 设置像素颜色
+
+                    height++;
+                }
+            }
+            width++;
+        }
+        return image;
+    }
+    private static BufferedImage xyGetImage(World world, ArrayList<Integer> x, ArrayList<Integer> y, ArrayList<Integer> z) {
+        BufferedImage image = new BufferedImage(x.size(), y.size(), BufferedImage.TYPE_INT_RGB);
+        int width = 0;
+        for (Integer i : x) {
+            int height = 0;
+            for (Integer j : y) {
+                for (Integer k : z) {
+                    int colorID = getColorID(world,i,j,k);
+                    image.setRGB(width, height, colorID); // 设置像素颜色
+                }
+                height++;
+            }
+            width++;
+        }
+        return image;
+    }
+
+    private static int getColorID(World world, int i, int j, int k) {
+        Block block = world.getBlockState(new BlockPos(i, j, k)).getBlock();
+        String block_name = block.toString();
+        block_name = block_name.substring(18,block_name.length()-1);
+        return NAME_COLOR.get(block_name);
     }
 
     private static boolean isRightSelected(){
@@ -132,13 +168,14 @@ public class OutputTool extends Item {
         }
         return false;
     }
-    private static void getSize(){
-        SIZE.add(Math.min(SelectTool.blockPos1.getX(), SelectTool.blockPos2.getX()));
-        SIZE.add(Math.max(SelectTool.blockPos1.getX(), SelectTool.blockPos2.getX()));
-        SIZE.add(Math.min(SelectTool.blockPos1.getY(), SelectTool.blockPos2.getY()));
-        SIZE.add(Math.max(SelectTool.blockPos1.getY(), SelectTool.blockPos2.getY()));
-        SIZE.add(Math.min(SelectTool.blockPos1.getZ(), SelectTool.blockPos2.getZ()));
-        SIZE.add(Math.max(SelectTool.blockPos1.getZ(), SelectTool.blockPos2.getZ()));
+    private static void sizeInit(){
+        SIZE.clear();
+        SIZE.add(0);
+        SIZE.add(SelectTool.blockPos1.getX());
+        SIZE.add(SelectTool.blockPos2.getX());
+        SIZE.add(SelectTool.blockPos1.getY());
+        SIZE.add(SelectTool.blockPos2.getY());
+        SIZE.add(SelectTool.blockPos1.getZ());
+        SIZE.add(SelectTool.blockPos2.getZ());
     }
-
 }
