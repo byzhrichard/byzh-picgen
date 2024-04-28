@@ -45,10 +45,6 @@ public class OutputTool extends Item {
                     throw new RuntimeException(e);
                 }
                 user.sendMessage(Text.literal(SIZE.toString()),false);
-
-//                String awa = world.getBlockState(SelectTool.blockPos2).getBlock().toString();
-//                awa = awa.substring(18,awa.length()-1);
-//                user.sendMessage(Text.literal(awa),false);
             }else {
                 user.sendMessage(Text.literal("select wrong"),false);
             }
