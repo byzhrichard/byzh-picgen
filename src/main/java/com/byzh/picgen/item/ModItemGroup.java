@@ -19,6 +19,7 @@ public class ModItemGroup {
             .icon(()->new ItemStack(ModBlocks.BYZH_RED))
             .entries( (displayContext, entries) -> {
                 entries.add(ModItems.OUTPUT_TOOL);
+                entries.add(ModItems.SELECT_TOOL);
                 for (Block block : ModBlocks.BLOCK_LIST) {
                     entries.add(block);
                 }

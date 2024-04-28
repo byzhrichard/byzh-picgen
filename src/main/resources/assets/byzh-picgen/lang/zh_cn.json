@@ -1,6 +1,7 @@
 {
   "block.byzh-picgen.byzh_red": "红",
   "item.byzh-picgen.output_tool": "导出工具",
+  "item.byzh-picgen.select_tool": "选择工具",
   "itemGroup.picgen_group": "麦块作画"
 
 }

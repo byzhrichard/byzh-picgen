@@ -19,11 +19,11 @@ public class ModModelProvider extends FabricModelProvider {
         for (Block block : ModBlocks.BLOCK_LIST) {
             blockStateModelGenerator.registerSimpleCubeAll(block);
         }
-//        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BYZH_RED);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.OUTPUT_TOOL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SELECT_TOOL, Models.GENERATED);
     }
 }
