@@ -1,3 +1,6 @@
+透明方块
+空气方块
+注册：ModBlocks,mycolor
 # 操作
 在终端输入./gradlew genSources会获取mc反编译的文件，由此可以看到源码
 

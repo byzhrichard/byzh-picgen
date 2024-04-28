@@ -1,8 +1,9 @@
 {
   "item.byzh-picgen.select1": "你选择的第一个方块在(%d, %d, %d)。",
   "item.byzh-picgen.select2": "你选择的第二个方块在(%d, %d, %d)。",
-  "item.byzh-picgen.complete": "完成啦~",
+  "item.byzh-picgen.complete": "完成啦awa~",
   "item.byzh-picgen.selectwrong": "选取方式有误qwq",
+
   "block.byzh-picgen.byzh_red": "红",
   "block.byzh-picgen.byzh_orange": "橙",
   "block.byzh-picgen.byzh_yellow": "黄",
@@ -10,8 +11,10 @@
   "block.byzh-picgen.byzh_cyan": "青",
   "block.byzh-picgen.byzh_blue": "蓝",
   "block.byzh-picgen.byzh_purple": "紫",
+  "block.byzh-picgen.byzh_black": "黑",
+  "block.byzh-picgen.byzh_white": "白",
   "item.byzh-picgen.output_tool": "导出工具",
   "item.byzh-picgen.select_tool": "选择工具",
-  "itemGroup.picgen_group": "麦块作画"
+  "itemGroup.picgen_group": "byzh's 麦块画图"
 
 }

@@ -15,6 +15,9 @@ public class mycolor {
         NAME_COLOR.put("byzh_blue",0x3282F6);
         NAME_COLOR.put("byzh_purple",0xEA3FF7);
 
+        NAME_COLOR.put("byzh_black",0x000000);
+        NAME_COLOR.put("byzh_white",0xFFFFFF);
+
     }
 
 

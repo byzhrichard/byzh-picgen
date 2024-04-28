@@ -23,6 +23,8 @@ public class ModBlocks{
     public static final Block BYZH_CYAN = registerBlocks("byzh_cyan", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
     public static final Block BYZH_BLUE = registerBlocks("byzh_blue", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
     public static final Block BYZH_PURPLE = registerBlocks("byzh_purple", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
+    public static final Block BYZH_BLACK = registerBlocks("byzh_black", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
+    public static final Block BYZH_WHITE = registerBlocks("byzh_white", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
 
     //==注册方法=====================================================================
     private static Item registerBlockItems(String name, Block block){
