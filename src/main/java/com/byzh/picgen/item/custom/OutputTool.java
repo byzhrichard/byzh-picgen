@@ -12,6 +12,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.apache.commons.lang3.ObjectUtils;
 import org.jetbrains.annotations.Nullable;
 
 import javax.imageio.ImageIO;
@@ -91,7 +92,7 @@ public class OutputTool extends Item {
         dir.mkdir();
         int dircnt = dir.list().length;
 
-        BufferedImage image = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB);
+        BufferedImage image = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
         if (z.size() == 1){
             image = xyGetImage(world, x, y, z);
         }
@@ -111,7 +112,7 @@ public class OutputTool extends Item {
     }
 
     private static BufferedImage yzGetImage(World world, ArrayList<Integer> x, ArrayList<Integer> y, ArrayList<Integer> z){
-        BufferedImage image = new BufferedImage(z.size(), y.size(), BufferedImage.TYPE_INT_RGB);
+        BufferedImage image = new BufferedImage(z.size(), y.size(), BufferedImage.TYPE_INT_ARGB);
         for (Integer i : x) {
             int height = 0;
             for (Integer j : y) {
@@ -127,7 +128,7 @@ public class OutputTool extends Item {
         return image;
     }
     private static BufferedImage xzGetImage(World world, ArrayList<Integer> x, ArrayList<Integer> y, ArrayList<Integer> z) {
-        BufferedImage image = new BufferedImage(x.size(), z.size(), BufferedImage.TYPE_INT_RGB);
+        BufferedImage image = new BufferedImage(x.size(), z.size(), BufferedImage.TYPE_INT_ARGB);
         int width = 0;
         for (Integer i : x) {
             for (Integer j : y) {
@@ -143,7 +144,7 @@ public class OutputTool extends Item {
         return image;
     }
     private static BufferedImage xyGetImage(World world, ArrayList<Integer> x, ArrayList<Integer> y, ArrayList<Integer> z) {
-        BufferedImage image = new BufferedImage(x.size(), y.size(), BufferedImage.TYPE_INT_RGB);
+        BufferedImage image = new BufferedImage(x.size(), y.size(), BufferedImage.TYPE_INT_ARGB);
         int width = 0;
         for (Integer i : x) {
             int height = 0;
@@ -162,8 +163,13 @@ public class OutputTool extends Item {
     private static int getColorID(World world, int i, int j, int k) {
         Block block = world.getBlockState(new BlockPos(i, j, k)).getBlock();
         String block_name = block.toString();
-        block_name = block_name.substring(18,block_name.length()-1);
-        return NAME_COLOR.get(block_name);
+        boolean flag = block_name.startsWith("Block{byzh-picgen:");
+        if (flag){
+            block_name = block_name.substring(18,block_name.length()-1);
+            return NAME_COLOR.get(block_name);
+        }else {
+            return NAME_COLOR.get("byzh_empty");
+        }
     }
 
     private static boolean isRightSelected(){

@@ -12,30 +12,10 @@ public class test {
 
 
     public static void main(String[] args) {
-        ArrayList<Integer> x = new ArrayList<>();
-        x.add(1);
-        x.add(1);
-        x.add(1);
-        ArrayList<Integer> y = new ArrayList<>();
-        y.add(1);
-        ArrayList<Integer> z = new ArrayList<>();
-        z.add(1);
-        z.add(1);
-        z.add(1);
-        BufferedImage image = new BufferedImage(x.size(), z.size(), BufferedImage.TYPE_INT_RGB);
-        int width = 0;
-        for (int i : x) {
-            for (int j : y) {
-                int height = 0;
-                for (int k : z) {
-//                    System.out.println(width+" "+height);
-                    image.setRGB(width, height, 0xFF0000); // 设置像素颜色
+        String block_name = "item.byzh-picgen.select1";
+        block_name = block_name.substring(18,block_name.length()-1);
+        System.out.println(block_name);
 
-                    height++;
-                }
-            }
-            width++;
-        }
-//        System.out.println("awa");
+
     }
 }
