@@ -9,7 +9,9 @@ public class picgen {
     public static void main(String[] args) throws IOException {
         String path = "src/main/resources/assets/byzh-picgen/textures/block/";
         for (String key : mycolor.NAME_COLOR.keySet()) {
-            mytry(key, mycolor.NAME_COLOR.get(key),path);
+            if (!key.equals("byzh_empty")){
+                mytry(key, mycolor.NAME_COLOR.get(key),path);
+            }
         }
 //        mytry("byzh_red",0xEB3324,path);
 //        mytry("byzh_orange",0xF08650,path);

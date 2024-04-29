@@ -102,7 +102,7 @@ public class OutputTool extends Item {
             image = yzGetImage(world, x, y, z);
         }
 
-        imageSave(image,dircnt);
+        imageSave(image, dircnt);
     }
 
     private static void imageSave(BufferedImage image,int dircnt) throws IOException {

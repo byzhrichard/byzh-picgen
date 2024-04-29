@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class ModBlocks{
     public static ArrayList<Block> BLOCK_LIST = new ArrayList<>();
 
+    public static final Block BYZH_EMPTY = registerBlocks("byzh_empty", new Block(FabricBlockSettings.copyOf(Blocks.GLASS).nonOpaque()));
     public static final Block BYZH_RED = registerBlocks("byzh_red", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
     public static final Block BYZH_ORANGE = registerBlocks("byzh_orange", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
     public static final Block BYZH_YELLOW = registerBlocks("byzh_yellow", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));

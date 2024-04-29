@@ -7,6 +7,8 @@ public class mycolor {
     public static HashMap<String,Integer> NAME_COLOR = new HashMap<>();
 
     static {
+        NAME_COLOR.put("byzh_empty",0xEFEFEF);
+
         NAME_COLOR.put("byzh_red",0xEB3324);
         NAME_COLOR.put("byzh_orange",0xF08650);
         NAME_COLOR.put("byzh_yellow",0xFFFD55);
