@@ -5,10 +5,10 @@
   "item.byzh-picgen.selectwrong": "选取方式有误qwq",
   "item.byzh-picgen.outputtoolusage1": "选好区域后，右键保存",
   "item.byzh-picgen.outputtoolusage2": "位于config/byzh",
-  "item.byzh-pic.selecttoolusage1": "右键选左上角",
-  "item.byzh-pic.selecttoolusage2": "右键选右下角",
-  "item.byzh-pic.selecttoolusage3": "确保两个方块在同一平面",
-  "item.byzh-pic.selecttoolusage4": "尚不支持水平面操作qwq",
+  "item.byzh-picgen.selecttoolusage1": "右键选左上角",
+  "item.byzh-picgen.selecttoolusage2": "右键选右下角",
+  "item.byzh-picgen.selecttoolusage3": "确保两个方块在同一平面",
+  "item.byzh-picgen.selecttoolusage4": "尚不支持水平面操作qwq",
 
   "block.byzh-picgen.byzh_empty": "透明像素",
   "block.byzh-picgen.byzh_red": "红",
@@ -20,8 +20,25 @@
   "block.byzh-picgen.byzh_purple": "紫",
   "block.byzh-picgen.byzh_black": "黑",
   "block.byzh-picgen.byzh_white": "白",
+
+  "block.byzh-picgen.bili_1": "哔哩 1",
+  "block.byzh-picgen.bili_2": "哔哩 2",
+  "block.byzh-picgen.bili_3": "哔哩 3",
+  "block.byzh-picgen.bili_4": "哔哩 4",
+  "block.byzh-picgen.bili_5": "哔哩 5",
+  "block.byzh-picgen.bili_6": "哔哩 6",
+  "block.byzh-picgen.bili_7": "哔哩 7",
+  "block.byzh-picgen.bili_8": "哔哩 8",
+  "block.byzh-picgen.bili_9": "哔哩 9",
+  "block.byzh-picgen.bili_10": "哔哩 10",
+  "block.byzh-picgen.bili_11": "哔哩 11",
+  "block.byzh-picgen.bili_12": "哔哩 12",
+  "block.byzh-picgen.bili_13": "哔哩 13",
+  "block.byzh-picgen.bili_14": "哔哩 14",
+
   "item.byzh-picgen.output_tool": "导出工具",
   "item.byzh-picgen.select_tool": "选择工具",
-  "itemGroup.picgen_group": "byzh's 麦块画图"
+  "itemGroup.picgen_group": "byzh's 麦块画图",
+  "itemGroup.bili_group": "BiliBili颜色组"
 
 }

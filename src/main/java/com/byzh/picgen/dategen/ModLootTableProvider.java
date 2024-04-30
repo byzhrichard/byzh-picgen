@@ -12,7 +12,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        for (Block block : ModBlocks.BLOCK_LIST) {
+        for (Block block : ModBlocks.BYZH_BLOCK) {
+            addDrop(block);
+        }
+        for (Block block : ModBlocks.BILI_BLOCK) {
             addDrop(block);
         }
     }

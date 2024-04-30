@@ -49,10 +49,10 @@ public class SelectTool extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("item.byzh-pic.selecttoolusage1"));
-        tooltip.add(Text.translatable("item.byzh-pic.selecttoolusage2"));
-        tooltip.add(Text.translatable("item.byzh-pic.selecttoolusage3"));
-        tooltip.add(Text.translatable("item.byzh-pic.selecttoolusage4"));
+        tooltip.add(Text.translatable("item.byzh-picgen.selecttoolusage1"));
+        tooltip.add(Text.translatable("item.byzh-picgen.selecttoolusage2"));
+        tooltip.add(Text.translatable("item.byzh-picgen.selecttoolusage3"));
+        tooltip.add(Text.translatable("item.byzh-picgen.selecttoolusage4"));
         super.appendTooltip(stack, world, tooltip, context);
     }
 }

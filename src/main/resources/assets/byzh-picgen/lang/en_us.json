@@ -5,10 +5,10 @@
   "item.byzh-picgen.selectwrong": "Wrong Selection",
   "item.byzh-picgen.outputtoolusage1": "After selection,right click to save",
   "item.byzh-picgen.outputtoolusage2": "root:config/byzh",
-  "item.byzh-pic.selecttoolusage1": "Right click to choose the top left",
-  "item.byzh-pic.selecttoolusage2": "Right click to choose the lower right",
-  "item.byzh-pic.selecttoolusage3": "Be sure the two block is in one plane",
-  "item.byzh-pic.selecttoolusage4": "Horizontal? Not yet support",
+  "item.byzh-picgen.selecttoolusage1": "Right click to choose the top left",
+  "item.byzh-picgen.selecttoolusage2": "Right click to choose the lower right",
+  "item.byzh-picgen.selecttoolusage3": "Be sure the two block is in one plane",
+  "item.byzh-picgen.selecttoolusage4": "Horizontal? Not yet support",
 
   "block.byzh-picgen.byzh_empty": "Empty",
   "block.byzh-picgen.byzh_red": "Red",
@@ -20,7 +20,25 @@
   "block.byzh-picgen.byzh_purple": "Purple",
   "block.byzh-picgen.byzh_black": "Black",
   "block.byzh-picgen.byzh_white": "White",
+
+  "block.byzh-picgen.bili_1": "BiliBili 1",
+  "block.byzh-picgen.bili_2": "BiliBili 2",
+  "block.byzh-picgen.bili_3": "BiliBili 3",
+  "block.byzh-picgen.bili_4": "BiliBili 4",
+  "block.byzh-picgen.bili_5": "BiliBili 5",
+  "block.byzh-picgen.bili_6": "BiliBili 6",
+  "block.byzh-picgen.bili_7": "BiliBili 7",
+  "block.byzh-picgen.bili_8": "BiliBili 8",
+  "block.byzh-picgen.bili_9": "BiliBili 9",
+  "block.byzh-picgen.bili_10": "BiliBili 10",
+  "block.byzh-picgen.bili_11": "BiliBili 11",
+  "block.byzh-picgen.bili_12": "BiliBili 12",
+  "block.byzh-picgen.bili_13": "BiliBili 13",
+  "block.byzh-picgen.bili_14": "BiliBili 14",
+
+
   "item.byzh-picgen.output_tool": "Byzh's Output Tool",
   "item.byzh-picgen.select_tool": "Byzh's Select Tool",
   "itemGroup.picgen_group": "BYZH's Picgen Group",
+  "itemGroup.bili_group": "BYZH's Bilibili Group"
 }

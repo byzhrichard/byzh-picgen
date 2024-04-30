@@ -1,11 +1,25 @@
-// 1.20.1	2024-04-29T13:00:01.1957517	Byzh's Picgen/Block Loot Tables
-f2d830f8262fe2a502dc973658043fe7f81e3cc4 data\byzh-picgen\loot_tables\blocks\byzh_black.json
-52839ca4cf4e3b16f881ae1e1ebaa32c939acc71 data\byzh-picgen\loot_tables\blocks\byzh_yellow.json
+// 1.20.1	2024-04-30T14:20:07.5162162	Byzh's Picgen/Block Loot Tables
 e336dcf17e6092fa9033bc54f8d0a9ddb1baa5c9 data\byzh-picgen\loot_tables\blocks\byzh_empty.json
-256a959671cd2b903868eb82624e5e061f573eb7 data\byzh-picgen\loot_tables\blocks\byzh_blue.json
+0b66fb790a940487b3d417f676434fea505726f0 data\byzh-picgen\loot_tables\blocks\bili_10.json
+50b13f06d811347eb872fb7634ac0866cc5dbd6d data\byzh-picgen\loot_tables\blocks\bili_12.json
+69f9088430bffa59dbe11329bb526473be3da718 data\byzh-picgen\loot_tables\blocks\bili_2.json
+2e8dc3ab5d89cd493621e16643cfa52444fdd636 data\byzh-picgen\loot_tables\blocks\byzh_cyan.json
+123f03656d9fb61c8ba93120d671ea7777fda499 data\byzh-picgen\loot_tables\blocks\bili_5.json
+eff7e638e6a371e82b41559b77d607bb0792f232 data\byzh-picgen\loot_tables\blocks\bili_11.json
+4734af381f8e1f2bf6eb111590af22f3af3a1281 data\byzh-picgen\loot_tables\blocks\bili_8.json
+ebf327c5c7dd531c8cf7f28e7c5de2652e3308f2 data\byzh-picgen\loot_tables\blocks\bili_14.json
+cb7497d9af3a9013ea4390f56459954440222d0c data\byzh-picgen\loot_tables\blocks\bili_1.json
 425ab95fe6b092a050ce44cae3ec913aee0bae8a data\byzh-picgen\loot_tables\blocks\byzh_orange.json
+75b358fedab0a6f75b8311508e89b7b959a6b13c data\byzh-picgen\loot_tables\blocks\bili_7.json
 d55c8bf40ea704cfa9f83e80602b2513f0678281 data\byzh-picgen\loot_tables\blocks\byzh_white.json
 63b12740fb43fbf93ad0d1cea6f4a793ec43d567 data\byzh-picgen\loot_tables\blocks\byzh_red.json
-2e8dc3ab5d89cd493621e16643cfa52444fdd636 data\byzh-picgen\loot_tables\blocks\byzh_cyan.json
+acf496b0175015592ccb1b2fe7669b84961d512e data\byzh-picgen\loot_tables\blocks\bili_4.json
+f2d830f8262fe2a502dc973658043fe7f81e3cc4 data\byzh-picgen\loot_tables\blocks\byzh_black.json
+52839ca4cf4e3b16f881ae1e1ebaa32c939acc71 data\byzh-picgen\loot_tables\blocks\byzh_yellow.json
+256a959671cd2b903868eb82624e5e061f573eb7 data\byzh-picgen\loot_tables\blocks\byzh_blue.json
+1839cb03d2350514b7c163ca7622e2cb99acb611 data\byzh-picgen\loot_tables\blocks\bili_9.json
+39e576c5f4b49bdace69e424f41ee9770e7c2d2c data\byzh-picgen\loot_tables\blocks\bili_6.json
+c609142eef081602ce9acb9ab03b7d9b072d254a data\byzh-picgen\loot_tables\blocks\bili_13.json
+eedf833403f2c1b774e66f698f60a7386ce88bd4 data\byzh-picgen\loot_tables\blocks\bili_3.json
 5e942858ded1ad74fabea9cafa66089fe74a71fc data\byzh-picgen\loot_tables\blocks\byzh_purple.json
 ccc09039a9b40ae951def4830ff4ca80eb403192 data\byzh-picgen\loot_tables\blocks\byzh_green.json

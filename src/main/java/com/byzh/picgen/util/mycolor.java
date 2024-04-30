@@ -20,6 +20,24 @@ public class mycolor {
         NAME_COLOR.put("byzh_black",(255 << 24) | 0x000000);
         NAME_COLOR.put("byzh_white",(255 << 24) | 0xFFFFFF);
 
+        NAME_COLOR.put("bili_1",(255 << 24) | 0xFE0302);
+        NAME_COLOR.put("bili_2",(255 << 24) | 0xFF7204);
+        NAME_COLOR.put("bili_3",(255 << 24) | 0xFFAA02);
+        NAME_COLOR.put("bili_4",(255 << 24) | 0xFFD302);
+        NAME_COLOR.put("bili_5",(255 << 24) | 0xFFFF00);
+        NAME_COLOR.put("bili_6",(255 << 24) | 0xA0EE00);
+        NAME_COLOR.put("bili_7",(255 << 24) | 0x00CD00);
+        NAME_COLOR.put("bili_8",(255 << 24) | 0x019899);
+        NAME_COLOR.put("bili_9",(255 << 24) | 0x4266BE);
+        NAME_COLOR.put("bili_10",(255 << 24) | 0x89D5FF);
+        NAME_COLOR.put("bili_11",(255 << 24) | 0xCC0273);
+        NAME_COLOR.put("bili_12",(255 << 24) | 0x222222);
+        NAME_COLOR.put("bili_13",(255 << 24) | 0x9B9B9B);
+        NAME_COLOR.put("bili_14",(255 << 24) | 0xFFFFFF);
+
+
+
+
     }
 
 
