@@ -38,9 +38,6 @@ public class ModItemGroup {
                 for (Block block : ModBlocks.BYZH_BLOCK) {
                     entries.add(block);
                 }
-                for (Block block : ModBlocks.BILI_BLOCK) {
-                    entries.add(block);
-                }
             }).build();
     public static final ItemGroup BILI_GROUP = registerItemGroups("bili_group", BILI_GROUP_Bulider);
     public static final ItemGroup PICGEN_GROUP = registerItemGroups("picgen_group", PICGEN_GROUP_Bulider);
