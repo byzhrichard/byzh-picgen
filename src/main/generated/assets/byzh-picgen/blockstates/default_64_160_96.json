@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "byzh-picgen:block/default_64_160_96"
+    }
+  }
+}

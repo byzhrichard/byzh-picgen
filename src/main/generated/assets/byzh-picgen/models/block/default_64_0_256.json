@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "byzh-picgen:block/default_64_0_256"
+  }
+}
