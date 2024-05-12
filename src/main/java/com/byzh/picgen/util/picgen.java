@@ -13,6 +13,9 @@ public class picgen {
                 mytry(key, mycolor.NAME_COLOR.get(key),path);
             }
         }
+        for (String key : mycolor.DEFAULT_NAME_COLOR.keySet()) {
+            mytry(key, mycolor.DEFAULT_NAME_COLOR.get(key),path);
+        }
     }
     private static void mytry(String name,int pic,String path) throws IOException {
 

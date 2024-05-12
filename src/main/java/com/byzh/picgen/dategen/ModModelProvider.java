@@ -1,6 +1,7 @@
 package com.byzh.picgen.dategen;
 
 import com.byzh.picgen.block.ModBlocks;
+import com.byzh.picgen.block.ModBlocks_default;
 import com.byzh.picgen.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -20,6 +21,9 @@ public class ModModelProvider extends FabricModelProvider {
             blockStateModelGenerator.registerSimpleCubeAll(block);
         }
         for (Block block : ModBlocks.BILI_BLOCK) {
+            blockStateModelGenerator.registerSimpleCubeAll(block);
+        }
+        for (Block block : ModBlocks_default.DEFAULT_BLOCK) {
             blockStateModelGenerator.registerSimpleCubeAll(block);
         }
     }

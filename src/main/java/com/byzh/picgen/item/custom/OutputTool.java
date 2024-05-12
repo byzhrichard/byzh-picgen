@@ -28,7 +28,6 @@ public class OutputTool extends Item {
         super(settings);
     }
 
-    private static HashMap<String,Integer> NAME_COLOR = mycolor.NAME_COLOR;
     private static ArrayList<Integer> SIZE = new ArrayList<>();
     private static final String PATH = FabricLoader.getInstance().getGameDir().toString()+"\\config\\byzh";
     @Override
@@ -166,9 +165,10 @@ public class OutputTool extends Item {
         boolean flag = block_name.startsWith("Block{byzh-picgen:");
         if (flag){
             block_name = block_name.substring(18,block_name.length()-1);
-            return NAME_COLOR.get(block_name);
+            Integer result = mycolor.NAME_COLOR.get(block_name);
+            return result != null ? result : mycolor.DEFAULT_NAME_COLOR.get(block_name);
         }else {
-            return NAME_COLOR.get("byzh_empty");
+            return mycolor.NAME_COLOR.get("byzh_empty");
         }
     }
 

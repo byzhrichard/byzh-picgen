@@ -1,6 +1,7 @@
 package com.byzh.picgen.dategen;
 
 import com.byzh.picgen.block.ModBlocks;
+import com.byzh.picgen.block.ModBlocks_default;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
@@ -16,6 +17,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
             addDrop(block);
         }
         for (Block block : ModBlocks.BILI_BLOCK) {
+            addDrop(block);
+        }
+        for (Block block : ModBlocks_default.DEFAULT_BLOCK) {
             addDrop(block);
         }
     }

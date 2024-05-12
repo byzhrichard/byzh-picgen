@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 public class mycolor {
     public static HashMap<String,Integer> NAME_COLOR = new HashMap<>();
+    public static HashMap<String,Integer> DEFAULT_NAME_COLOR = new HashMap<>();
 
     static {
         NAME_COLOR.put("byzh_empty",(0 << 24) | 0xEFEFEF);
@@ -35,7 +36,24 @@ public class mycolor {
         NAME_COLOR.put("bili_13",(255 << 24) | 0x9B9B9B);
         NAME_COLOR.put("bili_14",(255 << 24) | 0xFFFFFF);
 
+        int num = (8+1);
+        for (int i = 0; i < num; i++) {
+            for (int j = 0; j < num; j++) {
+                for (int k = 0; k < num; k++) {
+                    int now_i = i*32;
+                    int now_j = j*32;
+                    int now_k = k*32;
 
+                    StringBuilder sb = new StringBuilder();
+                    sb.append("default_").append(now_i).append("_").append(now_j).append("_").append(now_k);
+                    String block_name = sb.toString();
+
+                    int pixel = (255 << 24) | (now_i << 16) | (now_j << 8) | now_k;
+
+                    DEFAULT_NAME_COLOR.put(block_name,pixel);
+                }
+            }
+        }
 
 
     }
