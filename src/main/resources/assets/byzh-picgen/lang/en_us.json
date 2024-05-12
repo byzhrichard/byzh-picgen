@@ -1,7 +1,7 @@
 {
   "item.byzh-picgen.select1": "The first block is in (%d, %d, %d).",
   "item.byzh-picgen.select2": "The second block is in (%d, %d, %d).",
-  "item.byzh-picgen.complete": "Completed!",
+  "item.byzh-picgen.complete": "Completed~",
   "item.byzh-picgen.selectwrong": "Wrong Selection",
   "item.byzh-picgen.outputtoolusage1": "After selection,right click to save",
   "item.byzh-picgen.outputtoolusage2": "root:config/byzh",
