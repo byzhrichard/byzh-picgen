@@ -19,8 +19,8 @@ public class picgen {
     }
     private static void mytry(String name,int pic,String path) throws IOException {
 
-        int width = 16; // 画布宽度
-        int height = 16; // 画布高度
+        int width = 1; // 画布宽度
+        int height = 1; // 画布高度
 
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         for (int x = 0; x < width; x++) {
